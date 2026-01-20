@@ -1,16 +1,6 @@
 spring:
-  datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: ""
+  profiles:
+    default: local
 
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
-    defer-datasource-initialization: true
-    show-sql: true
-
-  h2:
-    console:
-      enabled: true
+server:
+  port: 8080
