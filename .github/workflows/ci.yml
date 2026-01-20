@@ -39,3 +39,11 @@ jobs:
           path: target/surefire-reports/*.xml
           reporter: java-junit
 
+      - name: Deploy
+        #      if: github.event_name == 'release'
+        # Only run this step if the branch is main
+        if: github.ref == 'refs/heads/main'
+        env:
+          deploy_url: ${{ secrets.RENDER_DEPLOYMENT_HOOK_URL }}
+        run: |
+          curl "$deploy_url"
