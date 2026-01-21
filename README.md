@@ -56,6 +56,7 @@ or
 
 ```bash
 docker run -e SPRING_PROFILES_ACTIVE=docker demo-app:debug
+```
 
 ---
 
